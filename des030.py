@@ -5,6 +5,6 @@ print('VERIFICADOR DE PAR OU ÍMPAR')
 number = int(input('Informe um número inteiro qualquer: '))
 rest = number % 2
 if rest == 0:
-    print(f'\nO número {number} é par! ')
+    print(f'\nO número {number} é par!')
 else:
-    print(f'\nO número {number} é ímpar! ')
+    print(f'\nO número {number} é ímpar!')

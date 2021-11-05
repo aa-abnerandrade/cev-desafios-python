@@ -5,5 +5,5 @@ av2 = float(input('Informe a nota para a avaliação 2: '))
 m = (av1 + av2) / 2
 
 print()
-print('A média do aluno é {:.1f}. ' .format(m))
+print('\033[7;40;1mA média do aluno é {:.1f}.\033[m' .format(m))
 

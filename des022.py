@@ -5,7 +5,7 @@ print()
 name = str(input('Digite seu nome completo: ')).strip()
 name = name.strip()
 
-print('\n=> RESULTADOS: ')
+print('\n\033[7;40;1m=> RESULTADOS: \033[m')
 print(' Em letras maiúsculas: {}' .format(name.upper()))
 print(' Em letras minúsculas: {}' .format(name.casefold()))
 

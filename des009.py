@@ -1,8 +1,8 @@
 # Ler um número inteiro e fazer tabuada
 print('='*5, ' DESAFIO 09 ', '='*5)
-number = int(input('Informe um valor: '))
+number = int(input('\033[1mInforme um valor:\033[m '))
 print()
-print('= Vamos à tabuada= ')
+print('= \033[7;40mVamos à tabuada\033[m = ')
 print(f'{number} x {1} = {number*1} ')
 print(f'{number} x {2} = {number*2} ')
 print(f'{number} x {3} = {number*3} ')

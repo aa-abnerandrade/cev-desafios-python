@@ -2,7 +2,7 @@
 print('='*5, ' DESAFIO 26', '='*5)
 name = str(input('Informe o nome completo: ')).strip().upper()
 
-print(f'\n= Análise do nome "{name.title()}" ')
+print(f'\n \033[1m= Análise do nome "{name.title()}" \033[m')
 name = name.replace('Ã', 'A')
 name = name.replace('Á', 'A')
 name = name.replace('Â', 'A')

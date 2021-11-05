@@ -1,6 +1,8 @@
 # Fazer um programa que leia algo e mostre o tipo primitvo e demais informações
 print ('===== DESAFIO 04 =====')
-answer = input('Digite qualquer caractere: ')
+
+
+answer = str(input('\n Digite qualquer caractere: ', ))
 print('É ou não é? ')
 print('O caractere é do tipo : ', type(answer))
 print('É numérico? ', answer.isnumeric())
