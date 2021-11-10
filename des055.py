@@ -15,21 +15,30 @@ for cont in range(1, qtd+1):
     item = str(input(f'Informe o nome do {cont}º item: ')).strip().title()
     peso = float(input(f'Peso de {item}: '))
     print('- '*20)
-    if (peso > Ppesado):
+
+    if cont == 1:
         Ppesado = peso
         Ipesado = item
         Cpesado = cont
-    if (peso < Pleve):
         Pleve = peso
         Ileve = item
-        Cleve =cont
+        Cleve = cont
+    else:
+        if (peso > Ppesado):
+            Ppesado = peso
+            Ipesado = item
+            Cpesado = cont
+        if (peso < Pleve):
+            Pleve = peso
+            Ileve = item
+            Cleve = cont
 
 print()
 print('\033[1;40m', ' '*18, 'RESULTADOS', ' '*18, '\033[m')
-print('\033[1mItem mais pesado: {} \033[m'
+print('\033[1mItem mais pesado: {:.1f} \033[m'
       '\nPeso: {}'
       '\nPosição: {}' .format(Ipesado, Ppesado, Cpesado))
-print('\033[1mItem mais leve: {} \033[m'
+print('\033[1mItem mais leve: {:.1f} \033[m'
       '\nPeso: {}'
       '\nPosição: {}' .format(Ileve, Pleve, Cleve))
 

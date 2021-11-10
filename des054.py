@@ -15,9 +15,9 @@ print()
 for cont in range(1, 7+1):
     Ybirth = int(input(f'Ano de nascimento da {cont}ª pessoa [xxxx]: '))
     age = Ycurrent - Ybirth
-    if (age <= 21):
+    if (age < 21):
         minor += + 1
-    elif (age > 21):
+    elif (age >= 21):
         legal += + 1
     total += + 1
 

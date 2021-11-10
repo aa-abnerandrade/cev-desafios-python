@@ -15,7 +15,7 @@ for cont in range(1, qtd+1):
     number = int(input(f'Digite o {cont}º valor: '))
     if (number % 2 == 0):
         soma += number
-        contpar += + 1
+        contpar += 1
 
 print('\n\033[4mResultado da análise: \033[m')
 print(f'\033[1mDe {qtd} valores inseridos, {contpar} são pares. A soma deles é {soma}. \033[m')

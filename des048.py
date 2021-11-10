@@ -7,10 +7,9 @@ qtd = 0
 
 print('\033[7;40m', ' '*15, ' CONTADOR ', ' '*15, '\033[m')
 for cont in range(1, 500+1):
-    if (cont % 3 == 0):
-        if (cont % 2 == 1):
-            soma = soma + cont
-            qtd += 1
+    if (cont % 3 == 0) and (cont % 2 == 1):
+        soma += cont
+        qtd += 1
 
 print()
 print(f'A SOMA de todos os {qtd} números que são:'

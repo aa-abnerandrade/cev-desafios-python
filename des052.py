@@ -2,21 +2,28 @@ print(' '*16, 'DESAFIO 52', ' '*16)
 '''
 Ler um número inteiro e retornar se é primo
 '''
-
 print(' '*5, '\033[7;40m VERIFICADOR DE NÚMEROS PRIMOS  \033[m', ' '*5)
+primo = 0
+naoprimo = 0
 
+colors = {'clean': '\033[m', 'red': '\033[31m', 'blue': '\033[34m', 'bold': '\033[1m'}
 number = int(input('Digite um número: '))
-
 print('-'*42)
-# for cont in range(2, number): 2
 
-print('\033[1;35m')
-if (number != 2) and (number != 3) and (number != 5) and (number != 7): # não primo
-    if (number % 2 == 0) or (number % 3 == 0) or (number % 5 == 0) or (number % 7 == 0): # não primo
-        print(f'O número {number} não é primo.')
+for cont in range(1, number+1):
+    if (number % cont == 0):
+        print(colors['blue'], cont, colors['clean'], end=' |')
+        primo += 1
     else:
-        print(f'O número {number} é primo. ')
+        print(colors['red'], cont, colors['clean'], end=' |')
+        naoprimo += 1
+
+print()
+print(colors['bold'])
+if (primo == 2):
+    print('O número {} é divisível {} vezes,'
+          '\nPortanto, É PRIMO.' .format(number, primo))
 else:
-    print(f'O número {number} é primo.')
-print('\033[m')
+    print('O número {} é divisível {} vezes,'
+          '\nPortanto, NÃO É PRIMO.' .format(number, primo))
 
