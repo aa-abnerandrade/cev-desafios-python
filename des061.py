@@ -11,7 +11,7 @@ razao = int(input('Informe a razão: '))
 cont = 1
 
 print('\n\033[1mOs termos são: \033[m')
-while cont < 10+1:
+while cont < 10 + 1:
     print(termo, '→', end=' ')
     termo += razao
     cont += 1

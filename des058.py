@@ -7,7 +7,7 @@ from random import randint
 from time import sleep
 
 colors = {'clean': '\033[m', 'purple': '\033[35m', 'sistem': '\033[7;40m', 'red': '\033[31m', 'blue': '\033[1;36m'}
-tent = 1
+tent = 0
 
 
 print('\n', colors['sistem'], ' = MÁQUINA DA SORTE = '.center(52), colors['clean'])
@@ -16,13 +16,17 @@ print('Estou pensando em um número... ', end=' ')
 mach = randint(1, 10)
 sleep(0.5)
 print(colors['purple'], 'PRONTO! Agora é sua vez.', colors['clean'])
+answer = 11
 
-
-answer = int(input('\nEscolha um número, de 1 a 10: '))
-
+print()
 while mach != answer:
-    answer = int(input(colors['red'] + 'Errou, tente novamente: ' + colors['clean']))
+    answer = int(input('Escolha um número, de 1 a 10: '))
+    if answer < mach:
+        print('\033[31mErrou. É mais! \033[m', end='')
+    elif answer > mach:
+        print('\033[31mErrou. É menos! \033[m', end='')
     tent += 1
+
 
 print()
 print(colors['blue'], f'ACERTOU! Após {tent} tentativas. ', colors['clean'])
