@@ -30,7 +30,7 @@ while opt != 0:
         elif num1 == num2:
             print('Os números são iguais.')
     elif opt == 4:
-        print('Novos números')
+        print(' Programa reiniciado. Insira novos valores a seguir.')
     print('\n' + '-'*52)
 
 print('Programa Encerrado.'.center(52))
