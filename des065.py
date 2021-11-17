@@ -1,4 +1,4 @@
-print('DESAFIO 61'.center(50))
+print('DESAFIO 65'.center(50))
 '''
 Ler vários números inteiros. No final, exibir média e os menor e maior valores.
 Perguntar ao usuário se deseja continuar.
