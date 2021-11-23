@@ -18,7 +18,7 @@ while True:
     print('='*50)
     print(f" {colors['bold']} Qual modalidade deseja jogar? ")
     print(f"[ 1 ] FREQUÊNCIA \n[ 2 ] CAMPEONATO {colors['clean']}\n[ 0 ] Sair ")
-    mode = int(input('Escolha aqui: '.rjust(50)))
+1    mode = int(input('Escolha aqui: '.rjust(50)))
 
     if mode == 1:           # MODO FREQUÊNCIA
         cont = 0
