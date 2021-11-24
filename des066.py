@@ -6,14 +6,14 @@ Exibir quantidade de números inseridos e soma
 '''
 print('CALCULADORA DE SOMA'.center(50))
 print('Insira 999 para finalizar a soma e encerrar o programa'.center(50), '\n')
-cont = 1
-soma = 0
+soma = cont = 0
 
 while True:
+    cont += 1
     number = int(input(f'{cont}° valor: '))
     if number == 999:
+        cont -= 1
         break
-    cont += 1
     soma += number
 
 print(f'\n\033[1mSoma dos {cont} valores digitados: {soma}\033[m')
