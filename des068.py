@@ -4,7 +4,7 @@ Par ou ímpar
 O jogo só será interrompido quando o jogador perder
 Exibir a quantidade de vitórias consecutivas 
 '''
-from random import  randint
+from random import randint
 colors = {'clean': '\033[m', 'bold': '\033[1m', 'yellowL': '\033[1;33m', 'yellowBG': '\033[1;43m', 'blueL': '\033[1;34m', 'blueBG': '\033[1;44m', 'cyanL': '\033[1;36m', 'cyanBG': '\033[1;46m'}
 print()
 print('\033[1;43m *** MÁQUINA DA SORTE *** \033[m'.center(60))
@@ -18,19 +18,21 @@ while True:
     print('='*50)
     print(f" {colors['bold']} Qual modalidade deseja jogar? ")
     print(f"[ 1 ] FREQUÊNCIA \n[ 2 ] CAMPEONATO {colors['clean']}\n[ 0 ] Sair ")
-1    mode = int(input('Escolha aqui: '.rjust(50)))
+    while True:
+        mode = int(input('Escolha aqui: '.rjust(50)))
+        if mode == 0 or mode == 1 or mode == 2:
+            break
 
     if mode == 1:           # MODO FREQUÊNCIA
-        cont = 0
-        wuser = 0
+        cont = wuser = 0
         print()
         print(f" {colors['blueBG']} MODALIDADE FREQUÊNCIA {colors['clean']} ".center(60))
         while True:
             cont += 1
             print(f"  {colors['blueL']}| PARTIDA {cont} | {colors['clean']} ".center(60))
             opt = 'Blank'
-            while opt != 'I' and opt != 'P':
-                opt = str(input('[ P ] PAR [ I ] Ímpar: ')).upper().strip()
+            while opt not in 'PI':
+                opt = str(input('[ P ] PAR [ I ] Ímpar: ')).upper().strip()[0]
             nummach = randint(1, 10)
             numuser = 0
             while numuser < 1 or numuser > 10:
@@ -60,8 +62,8 @@ while True:
         print()
         print(f'CAMPEONATO DE {qtd} PARTIDAS'.center(50))
         opt = 'Blank'
-        while opt != 'I' and opt != 'P':
-            opt = str(input(f"{colors['cyanBG']} Escolha seu time [ P ] PAR [ I ] Ímpar: {colors['clean']} ")).upper().strip()
+        while opt not in 'PI':
+            opt = str(input(f"{colors['cyanBG']} Escolha seu time [ P ] PAR [ I ] Ímpar: {colors['clean']} ")).upper().strip()[0]
         for cont in range(1, qtd+1):
             print()
             print(f"  {colors['cyanL']}| PARTIDA {cont} | {colors['clean']} ".center(60))
