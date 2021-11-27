@@ -14,8 +14,8 @@ while True:
     name = str(input('Nome: ')).title().strip()
     age = int(input('Idade: '))
     sex = 'Blank'
-    while sex != 'H' and sex != 'M':
-        sex = str(input('Sexo [H/M]:')).upper().strip()
+    while sex not in 'HM':
+        sex = str(input('Sexo [H/M]:')).upper().strip()[0]
 
     if age > 21:
         age21 += 1
@@ -25,10 +25,10 @@ while True:
         if age <= 16:
             girl16 += 1
 
-    contin = 'Blank'
-    while contin != 'S' and contin != 'N':
-        contin = str(input('\n === Deseja continuar? [S/N]: ')).upper().strip()
-    if contin == 'N':
+    answer = 'Blank'
+    while answer not in 'SN':
+        answer = str(input('\n === Deseja continuar? [S/N]: ')).upper().strip()
+    if answer == 'N':
         break
 
 print('\n\033[1;7;40m RESULTADOS: \033[m ')

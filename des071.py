@@ -1,45 +1,42 @@
-ced = 50
-while True
-
-# print('\n'*2)
-print('DESAFIO 71'.center(50))
+print('DESAFIO 71'.center(40))
 '''
 Simular funcionamento de caixa eletrônico. Ler o valor a ser sacado
 Retornar quantas cédulas de cada valor serão entregues
 Cédulas de 50, 20, 10 e 1
 '''
 print('\033[7;1;40m', end='')
-print(f"{' A    T   M  ':*^50} \033[m")
-cedula = 50
+print(f"{' A    T   M  ':*^40} \033[m")
+qtdced = 0
+cedula = 100
 
 Osaque = int(input('Qual valor deseja sacar? '))
 saque = Osaque
+print()
 
 while True:
-    print('Total de: '.rjust(45))
+    if saque >= cedula:
+        saque -= cedula
+        qtdced += 1
+    else:
+        if qtdced > 0:
+            print(f'{qtdced} cédulas de R${cedula:.2f}'.rjust(40))
+        if cedula == 100:
+            cedula = 50
+            qtdced = 0
+        elif cedula == 50:
+            cedula = 20
+            qtdced = 0
+        elif cedula == 20:
+            cedula = 10
+            qtdced = 0
+        elif cedula == 10:
+            cedula = 5
+            qtdced = 0
+        elif cedula == 5:
+            cedula = 1
+            qtdced = 0
+        if saque == 0:
+            break
 
-    qtd50 = saque // 50 # 3,4
-    saque = saque - (50 * qtd50)  # restam 20
-    print(f'{qtd50} cédulas de R$ 50,00'.rjust(45))
-    if saque == 0:
-        break
-
-    qtd20 = saque // 20  # 1
-    saque = saque - (20 * qtd20)  # restam 0
-    print(f' {qtd20} cédulas de R$ 20,00'.rjust(45))
-    if saque == 0:
-        break
-
-    qtd10 = saque // 10 # 0
-    saque = saque - (10 * qtd10)  # restam 0
-    print(f' {qtd10} cédulas de R$ 10,00'.rjust(45))
-    if saque == 0:
-        break
-
-    qtd01 = saque // 1
-    saque = saque - (1 * qtd01)  # restam 0
-    print(f' {qtd01} cédulas de R$ 1,00'.rjust(45))
-    if saque == 0:
-        break
-
-print('Obrigado por utilizar o ATM.')
+print()
+print('\033[1;40mObrigado por utilizar o ATM\033[m'.center(50))

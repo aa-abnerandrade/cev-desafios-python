@@ -6,6 +6,7 @@ Retornar: a) total gasto na compra; b) quantos produtos custam mais de 1000 reai
 
 print(f"\033[1;7;40m{' BRAZILIAN SHOPS ':=^40}\033[m")
 total = contmil = lowest = soma = 0
+namelow = 'Blank'
 cont = 1
 
 while True:
@@ -16,14 +17,12 @@ while True:
     soma += value
     if value >= 1000:
         contmil += 1
-    if lowest == 0:
+    if lowest == 0 or value < lowest:
         lowest = value
         namelow = item
-    else:
-        if value < lowest:
-            lowest = value
-            namelow = item
-    out = str(input(' = = = Deseja continuar? [S/N] ')).strip().upper()
+    out = 'Blank'
+    while out not in 'SN':
+        out = str(input(' = = = Deseja continuar? [S/N] ')).strip().upper()[0]
     if out == 'N':
         break
     cont += 1
