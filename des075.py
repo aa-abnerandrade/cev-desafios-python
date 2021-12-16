@@ -1,41 +1,39 @@
 print('DESAFIO 75'.center(40))
 '''
 Ler 4 valores pelo teclado e guardar em uma tupla. Após isso, mostre:
-a) quantas vezes apareceu o valor 9 / b) em que posição foi digita o primeiro valor 3 / c) quais foram os números pares
+a) quais foram os números pares / b) quantas vezes apareceu o valor 9 / c) em que posição foi digitado o primeiro valor 3
 '''
+print()
 n1 = int(input('Digite um número: '))
 n2 = int(input('Digite outro número:  '))
 n3 = int(input('Digite o terceiro número: '))
 n4 = int(input('Digite o último número: '))
-
 numbers = (n1, n2, n3, n4)
-print(numbers)
+print(f'\n\033[1mOs números digitados foram: {numbers}\033[m')
 
-print(numbers[2])
-print(numbers[3] % 2)
-
-pares = 0
-for cont in range(1, 4+1):
-    print(numbers[cont])
+pares = 'Blank'
+for cont in range(0, 3+1):
+    #print(numbers[cont])
     if (numbers[cont] % 2) == 0:
-        if pares == 0:
-            pares = numbers[cont]
+        if pares == 'Blank':
+            pares = str(numbers[cont])
         else:
-            pares += numbers[cont]
-print(f'Os números pares são: {pares}')
+            pares = pares + ', ' + str(numbers[cont])
+print(f'\033[1;40;7m Os números pares são: {pares} \033[m'.rjust(52))
 
-nrepeat = int(input('Qual número deseja contar: '))
+nrepeat = int(input('\n* Qual número deseja contar: '))
 qtdrepeat = numbers.count(nrepeat)
 if qtdrepeat == 0:
-    print(f'O número {nrepeat} não apareceu na listagem. ')
+    print(f'O número {nrepeat} não aparece na listagem.'.rjust(40))
 else:
-    print(f'O número {nrepeat} apareceu {qtdrepeat} vez(es). ')
+    print(f'\033[1;40;7m O número {nrepeat} apareceu {qtdrepeat} vez(es). \033[m'.rjust(52))
 
-nsearch = int(input('Qual número deseja localizar: '))
-nposit = numbers.index(nsearch)
-if nposit == 0:
-    print(f'Não localizamos o número {nsearch} em nenhuma posição. ')
+nsearch = int(input('\n* Qual número deseja localizar: '))
+if nsearch not in numbers:
+    print(f'Número {nsearch} não localizado nenhuma posição.'.rjust(40))
 else:
-    print(f'O número {nsearch} foi localizado na posição {nposit}')
+    print(f'\033[1;40;7m Número {nsearch} localizado na posição {numbers.index(nsearch)+1} \033[m'.rjust(52))
 
+print()
+print('Analisador encerrado. Volte sempre.'.center(40))
 
