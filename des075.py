@@ -4,11 +4,10 @@ Ler 4 valores pelo teclado e guardar em uma tupla. Após isso, mostre:
 a) quais foram os números pares / b) quantas vezes apareceu o valor 9 / c) em que posição foi digitado o primeiro valor 3
 '''
 print()
-n1 = int(input('Digite um número: '))
-n2 = int(input('Digite outro número:  '))
-n3 = int(input('Digite o terceiro número: '))
-n4 = int(input('Digite o último número: '))
-numbers = (n1, n2, n3, n4)
+numbers = ((int(input('Digite um número: '))),
+           (int(input('Digite outro número: '))),
+           (int(input('Digite o terceiro número: '))),
+           (int(input('Digite o último número:  '))))
 print(f'\n\033[1mOs números digitados foram: {numbers}\033[m')
 
 pares = 'Blank'
@@ -19,7 +18,10 @@ for cont in range(0, 3+1):
             pares = str(numbers[cont])
         else:
             pares = pares + ', ' + str(numbers[cont])
-print(f'\033[1;40;7m Os números pares são: {pares} \033[m'.rjust(52))
+if pares == "Blank":
+    print('Não foram digitados valores pares.'.rjust(40))
+else:
+    print(f'\033[1;40;7m Os números pares são: {pares} \033[m'.rjust(52))
 
 nrepeat = int(input('\n* Qual número deseja contar: '))
 qtdrepeat = numbers.count(nrepeat)

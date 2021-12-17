@@ -19,6 +19,11 @@ for pos in range(-4, -1+1):
     print(f" {clubs.index(clubs[pos])+1}º - {clubs[pos]} ")
 
 print()
+print(f"\033[1;7;40m{'=== Ranking completo ':=<50}\033[m")
+for pos, club in enumerate(clubs[0:len(clubs)]):
+    print(f" {pos+1}º - {club} ")
+
+print()
 print(f"\033[1;7;40m{'=== Ordem alfabética ':=<50}\033[m")
 ordem = sorted(clubs)
 for pos in range(0, 19+1):
