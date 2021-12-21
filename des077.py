@@ -1,20 +1,19 @@
-print('DESAFIO 77'.center(40))
+print('DESAFIO 77'.center(44))
 '''
 Criar um programa que tenha uma tupla com várias palavras (sem acentos)
 Após isso, mostrar para cada palavra quais são suas vogais
 '''
-print(f"{' VERIFICADOR DE VOGAIS ':|^38}")
-words = ('Notebook', 'Livro', 'Headseat', 'Mouse', 'Webcam', 'Monitor', 'Caderno',
-         'Caneta', 'Casaco', 'Teclado', 'Bloco')
+print(f" \033[1m {' VERIFICADOR DE VOGAIS  ':|^42} \033[m")
+names = ('Victor', 'Rodrigo', 'João', 'Mayara', 'Ingrid', 'Fábio', 'Jéssica', 'Felipe', 'Antônio')
 
-cont = 0
-while cont < len(words):
-    word = words[cont]
-    print(f'\n Termo: {(words[cont]).upper():>10} | Vogais:', end=' ')
-    for letter in word:
-        if letter in 'aeiou':
+for name in names:
+    letters = name.lower()
+    print(f"\n Nome: {name.title():>10}   |   Vogais:  ", end=' \033[1;36m')
+    for letter in letters:
+        if letter in 'aeiouáéâôã':
             print(letter, end=' ')
-    cont += 1
+    print(end='\033[m')
 
-print(f"\n{'':|^36} ")
-print('Verificador encerrado. Volte sempre.'.center(38))
+
+print(f"\n\n\033[1m{'':|^44} ")
+print('Verificador encerrado. Volte sempre.'.center(42))
