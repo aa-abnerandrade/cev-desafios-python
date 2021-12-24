@@ -7,16 +7,18 @@ for c in range(0, 5+1):
     valores.append(int(input(f" Valor na posição {c}: ")))
 print(valores)
 
-qtdmenor = valores.count(min(valores))
-if qtdmenor > 1:
-    print(f" O valor {min(valores)} aparece {qtdmenor} vezes, nas posições !!!! ")
-qtdmaior = valores.count(max(valores))
-if qtdmaior > 1:
-    print(f" O valor {max(valores)} aparece {qtdmaior} vezes, nas posições !!!!")
+menor = min(valores)
+maior = max(valores)
 
-# criar uma lista para receber as posições de menor e maior?
-# só vai, se joga
-# colocar isso dentro do for
+qtdmenor = valores.count(menor)
+qtdmaior = valores.count(maior)
 
-
+print(f"Menor valor: {menor}, nas posições: ", end='') # menor
+for pos, valor in enumerate(valores):
+    if valor == menor:
+        print(pos, end=', ')
+print(f"Maior valor: {maior}, nas posições: ", end='') # maior
+for pos, valor in enumerate(valores):
+    if valor == maior:
+        print(pos, end=', ')
 
