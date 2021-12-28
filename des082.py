@@ -1,5 +1,6 @@
 print('DESAFIO 82'.center(44))
 '''
-Criar um programa que tenha uma tupla com várias palavras (sem acentos)
-Após isso, mostrar para cada palavra quais são suas vogais
+Ler vários números e colocar em lista
+separar os números pares e ímpares em duas novas listas geradas 
+ao final, exibir as 3 listas geradas
 '''
