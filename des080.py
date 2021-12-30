@@ -9,11 +9,14 @@ for X in range(0, 5):
     number = int(input('Digite um número: '))
     if not numbers:
         numbers.append(number)
+        print('Número adicionado ao final da lista.')
     else:
-        while number
-        for Y in range(0, len(numbers)):
-            if number > numbers[Y] and number < numbers[Y+1]:
-                numbers.insert(pos, number)
-
+        #for pos in range(0, len(numbers)):
+        pos = 0
+        if number *4* > numbers[pos]: #não usa o X?
+            numbers.append(number)
+        else:
+            numbers.insert(0, number)
+        pos += 1
 
 print(f"\nOs valores digitados foram: {numbers}")
