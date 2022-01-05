@@ -17,7 +17,7 @@ while True:
 
 print()
 print(f'\033[1;40mTotal de números digitados: {len(numbers)} \033[m')
-find = str(input('\n\033[33mDeseja encontrar testar específico?\033[m [S/N]: ')).strip().upper()
+find = str(input('\n\033[33mDeseja encontrar número específico?\033[m [S/N]: ')).strip().upper()
 if find == 'S':
     search = int(input('Qual valor deseja checar? '))
     if search in numbers:
