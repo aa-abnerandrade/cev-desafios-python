@@ -10,7 +10,7 @@ print()
 print('\033[1;43m *** MÁQUINA DA SORTE *** \033[m'.center(60))
 print('\033[1;33mVamos jogar par ou ímpar ?\033[m'.center(60))
 # wuser = 0
-# cont = 0
+# verificador = 0
 
 mode = 0
 while True:

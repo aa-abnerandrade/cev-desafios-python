@@ -3,19 +3,21 @@ print('DESAFIO 83'.center(44))
 analisar um expressão qualquer que use parênteses
 analisar se a expressão informada está com parênteses abertos e fechados na ordem correta 
 '''
-expressao = str(input('Digite a expressão que deseja verificar: '))
+print(f" {' VERIFICADOR DE EXPRESSÃO MATEMÁTICA ':_^44} ")
 
-print(f" Você digitou a expressão {expressao}")
-cont = 0
+expressao = str(input('\nDigite a expressão que deseja verificar: '))
+
+verificador = 0
 for L in expressao:
     if L == '(':
-        cont += 1
+        verificador += 1
     elif L == ')':
-        cont -= 1
-    elif cont < 0:
+        verificador -= 1
+    elif verificador < 0:
         break
 
-if cont == 0:
-    print('Expressão válida')
+print("\n\033[1mRESULTADO DA ANÁLISE:\033[m", end=' ')
+if verificador == 0:
+    print('\033[34mExpressão válida.\033[m')
 else:
-    print('Expressão inválida')
+    print('\033[31mExpressão inválida.\033[m')

@@ -12,7 +12,7 @@ print(f'\n\033[1mOs números digitados foram: {numbers}\033[m')
 
 pares = 'Blank'
 for cont in range(0, 3+1):
-    #print(numbers[cont])
+    #print(numbers[verificador])
     if (numbers[cont] % 2) == 0:
         if pares == 'Blank':
             pares = str(numbers[cont])
