@@ -21,5 +21,4 @@ for X in range(1, 5+1):
         print('\033[37mNúmero adicionado.\033[m')
 
 
-
 print(f"\n\033[40;1mOs valores digitados foram: {numbers}\033[m")
